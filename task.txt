@@ -1,7 +1,0 @@
-1. change object to player √
-2. change box to trees  √
-3. add nuts to trees  √
-4. hit trees-> nuts falling down 
-5. level-> all nuts are falling 
-6. background pic √
-7. 3 levels to terminal √
