@@ -18,6 +18,7 @@ public class TreeBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+       
         if (collision.gameObject.tag != "Player")
             return;
         
@@ -26,6 +27,10 @@ public class TreeBehavior : MonoBehaviour
         {
             Rigidbody2D childRigidBody = tChild.gameObject.GetComponent<Rigidbody2D>();
             childRigidBody.gravityScale = 2.0f;
+
+            SpringJoint2D childJoin = tChild.gameObject.GetComponent<SpringJoint2D>();
+            if(childJoin)
+                childJoin.enabled = false;
         }
             
     }

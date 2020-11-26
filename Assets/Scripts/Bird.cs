@@ -11,6 +11,11 @@ public class Bird : MonoBehaviour
     Rigidbody2D _rigidbody2D;
     SpriteRenderer _spriteRenderer;
 
+    public float GetCurrentForce()
+    {
+        return _launchForce;
+    }
+
 
     private void Awake()
     {
