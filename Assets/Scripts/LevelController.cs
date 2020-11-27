@@ -9,17 +9,17 @@ public class LevelController : MonoBehaviour
     
     [SerializeField]string _nextLevelName;
 
-    Nut[] _monsters;
+    Nut[] nutsOnLevel;
 
     void OnEnable()
     {
-        _monsters = FindObjectsOfType<Nut>();
+        nutsOnLevel = FindObjectsOfType<Nut>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MonstersAreAllDead())
+        if (AreAllNutsCollected())
         {
           GoToNextLevel();
         }
@@ -33,9 +33,9 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(_nextLevelName);
     }
 
-     bool MonstersAreAllDead()
+     bool AreAllNutsCollected()
     {
-       foreach(var monster in _monsters)
+       foreach(var monster in nutsOnLevel)
         {
             if (monster.gameObject.activeSelf)
                 return false;
